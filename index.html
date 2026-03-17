@@ -7,39 +7,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #6366f1; /* Indigo moderno */
-            --accent: #06b6d4;  /* Cyan tipo Cloud/AWS */
-            --bg: #030712;      /* Negro azulado profundo */
+            --primary: #6366f1;
+            --accent: #06b6d4;
+            --bg: #030712;
             --glass: rgba(255, 255, 255, 0.03);
             --border: rgba(255, 255, 255, 0.1);
         }
 
         * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--bg); color: #f8fafc; line-height: 1.6; }
+        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #030712 100%); z-index: -1; }
+        .container { max-width: 900px; margin: 60px auto; padding: 20px; }
 
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: #f8fafc;
-            line-height: 1.6;
-        }
-
-        /* Fondo Animado Antigravity */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #030712 100%);
-            z-index: -1;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 20px;
-        }
-
-        /* Tarjeta Principal */
         header {
             text-align: center;
             padding: 60px 40px;
@@ -51,131 +30,31 @@
             animation: float 6s ease-in-out infinite;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
 
         h1 { font-size: 3rem; margin: 0; letter-spacing: -2px; }
         .subtitle { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-top: 10px; }
-        
-        .badge {
-            display: inline-block;
-            background: rgba(99, 102, 241, 0.2);
-            color: var(--primary);
-            padding: 4px 12px;
-            border-radius: 100px;
-            font-size: 0.8rem;
-            border: 1px solid var(--primary);
-            margin-bottom: 15px;
-        }
+        .badge { display: inline-block; background: rgba(99, 102, 241, 0.2); color: var(--primary); padding: 4px 12px; border-radius: 100px; font-size: 0.8rem; border: 1px solid var(--primary); margin-bottom: 15px; }
 
-        /* Secciones */
-        section {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            padding: 30px;
-            border-radius: 24px;
-            margin-bottom: 20px;
-            transition: 0.3s;
-        }
-
+        section { background: var(--glass); border: 1px solid var(--border); padding: 30px; border-radius: 24px; margin-bottom: 20px; transition: 0.3s; }
         section:hover { border-color: var(--primary); background: rgba(255,255,255,0.05); }
-
         h2 { color: var(--primary); font-size: 1.5rem; margin-top: 0; }
-
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        
         .item { border-left: 2px solid var(--border); padding-left: 20px; margin-bottom: 15px; }
         .item h4 { margin: 0; color: #fff; }
         .item span { font-size: 0.85rem; color: #94a3b8; }
 
-        /* Botones / Links */
         .contact-links { margin-top: 30px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .btn {
-            text-decoration: none;
-            color: #fff;
-            padding: 10px 20px;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            font-size: 0.9rem;
-            background: rgba(255,255,255,0.05);
-            transition: 0.3s;
-        }
+        .btn { text-decoration: none; color: #fff; padding: 10px 20px; border: 1px solid var(--border); border-radius: 12px; font-size: 0.9rem; background: rgba(255,255,255,0.05); transition: 0.3s; display: flex; align-items: center; gap: 8px; }
         .btn:hover { background: var(--primary); transform: translateY(-3px); }
 
-        @media (max-width: 600px) {
-            .grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2.2rem; }
-        }
+        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 2.2rem; } }
     </style>
 </head>
 <body>
 
     <div class="container">
         <header>
-            <span class="badge">Cloud Enthusiast uwu</span>
+            <span class="badge">Cloud Enthusiast</span>
             <h1>Jorge Viagel López</h1>
-            <div class="subtitle">Junior IT & AWS | Estudiante de ASIR</div>
-            <p style="max-width: 600px; margin: 20px auto; color: #cbd5e1;">
-                Enfocado en la administración de sistemas y arquitecturas Cloud[cite: 8]. 
-                Especializado en crear soluciones escalables y seguras en AWS.
-            </p>
-            <div class="contact-links">
-                <a href="mailto:jorgeviagellopez05@gmail.com" class="btn">✉️ Email</a>
-                <a href="https://linkedin.com" target="_blank" class="btn">🔗 LinkedIn</a>
-                <a href="#" class="btn">🚀 GitHub</a>
-            </div>
-        </header>
-
-        <div class="grid">
-            <section>
-                <h2>Competencias Técnicas</h2>
-                <div class="item">
-                    <h4>Cloud Computing</h4>
-                    <span>AWS (EC2, S3, IAM)[cite: 15].</span>
-                </div>
-                <div class="item">
-                    <h4>Sistemas y Redes</h4>
-                    <span>Administración de SO, Redes locales y Hardware[cite: 17].</span>
-                </div>
-                <div class="item">
-                    <h4>Bases de Datos</h4>
-                    <span>Gestión y consultas SQL[cite: 19].</span>
-                </div>
-            </section>
-
-            <section>
-                <h2>Experiencia</h2>
-                <div class="item">
-                    <h4>Urbaser</h4>
-                    <span>Control de Servicio (Prácticas) [cite: 29]</span><br>
-                    <span>2025 - Actualidad</span>
-                </div>
-                <div class="item">
-                    <h4>DelegBCN</h4>
-                    <span>Técnico de Sistemas (Prácticas) [cite: 31]</span><br>
-                    <span>2023 - 2024</span>
-                </div>
-            </section>
-        </div>
-
-        <section>
-            <h2>Formación Académica</h2>
-            <div class="item">
-                <h4>CFGS ASIR</h4>
-                <span>Institut TIC de Barcelona [cite: 24]</span>
-            </div>
-            <div class="item">
-                <h4>CFGM Sistemas Microinformáticos y Redes</h4>
-                <span>Institut La Pineda [cite: 26]</span>
-            </div>
-        </section>
-
-        <footer style="text-align: center; padding: 20px; color: #64748b; font-size: 0.8rem;">
-            Hecho con ✨ por Jorge VL | Badalona, 2026 [cite: 12]
-        </footer>
-    </div>
-
-</body>
-</html>
+            <div class="subtitle">Junior IT
